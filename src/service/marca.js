@@ -33,3 +33,5 @@ class ServiceMarca {
         Marca.Deletar(id)
     }
 }
+
+export default new ServiceMarca()
