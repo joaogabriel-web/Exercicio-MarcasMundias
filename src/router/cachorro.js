@@ -1,5 +1,5 @@
 import express from 'express';
-import ControllerMarca from '../controller/marca.js';
+import ControllerMarca from '../controller/cachorro.js';
 
 const router = express.Router();
 

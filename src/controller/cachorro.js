@@ -1,10 +1,10 @@
-import ServiceMarca from '../services/marca.js';
+import ServiceMarca from '../services/cachorro.js';
 
-class ControllerMarca {
+class ControllerCachorro {
     Buscar(req, res) {
         try {
-            const marca = ServiceMarca.Buscar();
-            res.send({ marca });
+            const cachorro = ServiceCachorro.Buscar();
+            res.send({ cachorro });
         }catch (error) {
             res.send({ error: error.message });
         }
@@ -13,8 +13,8 @@ class ControllerMarca {
     BuscarUm(req, res) {
         try {
             const id = req.params.id;
-            const marca = ServiceMarca.BuscarUm(id);
-            res.send({ marca });
+            const cachorro = ServiceCachorro.BuscarUm(id);
+            res.send({ cachorro });
         } catch (error) {
             res.send({ error: error.message });
         }
@@ -22,9 +22,9 @@ class ControllerMarca {
 
     Criar(req, res) {
         try {
-            const marca = req.body.marca;
-            ServiceMarca.Criar(marca);
-            res.send({ message: "Marca criada com sucesso" });
+            const cachorro = req.body.cachorro;
+            ServiceCachorro.Criar(cachorro);
+            res.send({ message: "Cachorro criado com sucesso" });
         } catch (error) {
             res.send({ error: error.message });
         }
@@ -33,9 +33,9 @@ class ControllerMarca {
     Alterar(req, res) {
         try {
             const id = req.params.id;
-            const marca = req.body.marca;
-            ServiceMarca.Alterar(id, marca);
-            res.send({ message: "Marca alterada com sucesso" });
+            const cachorro = req.body.cachorro;
+            ServiceCachorro.Alterar(id, cachorro);
+            res.send({ message: "Cachorro alterado com sucesso" });
         } catch (error) {
             res.send({ error: error.message });
         }
@@ -44,12 +44,12 @@ class ControllerMarca {
     Deletar(req, res) {
         try {
             const id = req.params.id;
-            ServiceMarca.Deletar(id);
-            res.send({ message: "Marca deletada com sucesso" });
+            ServiceCachorro.Deletar(id);
+            res.send({ message: "Cachorro deletado com sucesso" });
         } catch (error) {
             res.send({ error: error.message });
         }
     }
 }
 
-export default new ControllerMarca()
+export default new ControllerCachorro()
