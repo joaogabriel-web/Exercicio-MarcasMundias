@@ -1,4 +1,4 @@
-import ServiceMarca from '../services/cachorro.js';
+import ServiceCachorro from '../service/cachorro.js';
 
 class ControllerCachorro {
     Buscar(req, res) {
@@ -14,6 +14,7 @@ class ControllerCachorro {
         try {
             const id = req.params.id;
             const cachorro = ServiceCachorro.BuscarUm(id);
+             
             res.send({ cachorro });
         } catch (error) {
             res.send({ error: error.message });
